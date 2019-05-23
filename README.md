@@ -1,7 +1,13 @@
 # AjaxTagHelper
 A simple solution to using links and ajax forms using Tag Helper in aspnet core
+
+
 First, copy the AjaxTagHelper class from the Extensions folder to your project.
+
+
 Second, copy the AjaxTagHelper.js file from js folder in wwwroot and add it to your project.
+
+
 Then do the following:
 Open the viewImports file and add the following code
 
