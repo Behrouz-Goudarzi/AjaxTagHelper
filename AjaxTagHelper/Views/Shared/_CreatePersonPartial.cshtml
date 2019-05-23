@@ -1,0 +1,14 @@
+﻿@model PersonModel
+
+    <tr id="tr@(Model.Id)">
+        <td>@Model.Id</td>
+        <td>@Model.FullName</td>
+        <td>@Model.Email</td>
+        <td>
+            <ajax-action ajax-action="Delete" ajax-controller="Home" ajax-data-id="@Model.Id"
+                         class="btn btn-danger btn-sm" ajax-success-func="SuccessDelete">
+                Delete
+            </ajax-action>
+        </td>
+    </tr>
+    <script src="~/js/AjaxHelper.js"></script>

@@ -1,0 +1,79 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model List<PersonModel>
+
+
+<div class="row">
+    <div class="col-sm-12">
+
+        <div class="row">
+            <form id="frmCreate" class="col-sm-9">
+                <div class="row">
+                    <div class="col-sm-4 form-control">
+
+                        <input placeholder="Enter Name" name="Name" class="input-group" type="text" />
+
+                    </div>
+                    <div class="col-sm-4 form-control">
+
+                        <input placeholder="Enter Family" name="Family" class="input-group" type="text" />
+
+                    </div>
+                    <div class="col-sm-4 form-control">
+
+                        <input placeholder="Enter Email@site.com " name="Email" class="input-group" type="email" />
+
+                    </div>
+                </div>
+
+            </form>
+            <div class="col-sm-3">
+                <ajax-button ajax-controller="Home" ajax-action="Create" ajax-form-id="frmCreate" ajax-success-func="SuccessCreate"
+                             class="btn btn-sm btn-success">
+                    Create
+                </ajax-button>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="col-sm-12">
+        <table class="table table-responsive">
+
+            <thead>
+                <tr>
+                    <td>Id</td>
+                    <td>Full Name</td>
+                    <td>Email</td>
+                    <td>Action</td>
+                </tr>
+            </thead>
+            <tbody id="tbodyPerson">
+                @foreach (var item in Model)
+                {
+
+                    <partial name="_CreatePersonPartial" model="item"/>
+                }
+            </tbody>
+        </table>
+
+    </div>
+
+</div>
+@section Scripts
+    {
+    <script>
+        function SuccessCreate(data) {
+            console.log(data);
+            $("#tbodyPerson").append(data);
+            $(data).fadeIn();
+
+        }
+        function SuccessDelete(data) {
+            $("#tr" + data.id).fadeOut();
+        }
+    </script>
+    <script src="~/js/AjaxHelper.js"></script>
+
+}
