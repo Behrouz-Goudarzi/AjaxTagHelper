@@ -48,4 +48,22 @@ Use the following code to use AJAX to send the form to server.
             </div>
         </div>
         
-        
+Finally, add the scripts you need to view it, check the code below
+
+
+@section Scripts
+    {
+    <script>
+        function SuccessCreate(data) {
+            console.log(data);
+            $("#tbodyPerson").append(data);
+            $(data).fadeIn();
+
+        }
+        function SuccessDelete(data) {
+            $("#tr" + data.id).fadeOut();
+        }
+    </script>
+    <script src="~/js/AjaxHelper.js"></script>
+
+}
