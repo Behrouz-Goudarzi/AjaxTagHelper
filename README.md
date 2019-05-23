@@ -50,7 +50,7 @@ Use the following code to use AJAX to send the form to server.
         
 Finally, add the scripts you need to view it, check the code below
 
-
+<code>
 @section Scripts
     {
     <script>
@@ -65,5 +65,5 @@ Finally, add the scripts you need to view it, check the code below
         }
     </script>
     <script src="~/js/AjaxHelper.js"></script>
-
 }
+</code>
